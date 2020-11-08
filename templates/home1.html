@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head><title>Sentimental Analysis</title></head>
+<body>
+<h1>Senitmental Analysis</h1>
+
+<form action="/sentiment_analysis_prediction" method="post">
+    <input type="text" name="text"/>
+    <input type="submit"/>
+</form  >
+
+<h1>Sentiment</h1>
+<div class="alert alert-primary" role="alert">
+  {% if probability %}
+    {{ sentiment }}
+     {% endif %}
+</div>
+<h1>Probability</h1>
+<div class="alert alert-primary" role="alert">
+  {% if probability %}
+    {{ probability }}
+     {% endif %}
+</div>
+{% if probability %}
+<div class="col-sm-2"><h1>Emotion</h1>
+<img src="{{ image }}" alt="Image">
+{% endif %}
+</body>
+
+</html>
